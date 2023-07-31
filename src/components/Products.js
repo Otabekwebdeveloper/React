@@ -1,7 +1,19 @@
-import React from 'react'
+import React from "react";
+import Product from "./Product";
 
-export default function Products() {
+export default function Products(props) {
+  const { products = [] } = props;
+
+  // if (!products.lenght) {
+  //   return <h3>Mahsulot yuq</h3>;
+  // }
+
   return (
-    <div>Products</div>
-  )
+    <div className="products">
+      {products.map((product) => (
+        <Product {...product} />
+      ))}
+    </div>
+  );
 }
+ 
